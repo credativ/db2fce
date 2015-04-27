@@ -1,5 +1,5 @@
 EXTENSION = db2fce
-DATA = db2fce--0.0.2.sql
+DATA = db2fce--0.0.3.sql
 DOCS = COPYRIGHT.db2fce
 
 PG_CONFIG = pg_config
