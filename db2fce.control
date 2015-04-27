@@ -1,0 +1,5 @@
+# DB2 fce extension
+comment = 'Functions and operators that emulate a subset of functions and packages from the DB2 RDBMS'
+default_version = '0.0.1'
+module_pathname = '$libdir/db2fce'
+relocatable = false

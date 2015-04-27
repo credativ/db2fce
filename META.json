@@ -1,0 +1,51 @@
+{
+   "name": "db2fce",
+   "abstract": "DB2 compatibility functions",
+   "description": "This module allows usage of well known DB2 functions inside PostgreSQL",
+   "version": "0.0.1",
+   "maintainer": [
+      "Michael Banck <michael.banck@credativ.de>"
+   ],
+   "license": {
+      "PostgreSQL": "http://www.postgresql.org/about/licence"
+   },
+   "prereqs": {
+      "runtime": {
+         "requires": {
+            "plpgsql": 0,
+            "PostgreSQL": "8.3.0"
+         },
+         "recommends": {
+            "PostgreSQL": "9.4.0"
+         }
+      }
+   },
+   "provides": {
+     "db2fce": {
+       "file": "sql/db2fce.sql",
+       "docfile": "README.db2fce",
+       "version": "0.0.1",
+       "abstract": "DB2 compatibility functions"
+     }
+   },
+   "resources": {
+      "homepage": "https://github.com/credativ/db2fce",
+      "repository": {
+        "url": "https://github.com/credativ/db2fce",
+        "web":  "https://github.com/credativ/db2fce",
+        "type": "git"
+      }
+   },
+   "generated_by": "Michael Banck",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
+   },
+   "release_status": "testing",
+   "tags": [
+      "db2",
+      "compatibility",
+      "user function",
+      "custom function",
+   ]
+}
