@@ -797,28 +797,6 @@ CREATE OPERATOR db2.^= (
 COMMENT ON OPERATOR db2.^= (record, record) IS 'not equal';
 
 CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.pg_lsn_ne,
-    LEFTARG = pg_lsn,
-    RIGHTARG = pg_lsn,
-    COMMUTATOR = ^=,
-    NEGATOR = =,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (pg_lsn, pg_lsn) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.jsonb_ne,
-    LEFTARG = jsonb,
-    RIGHTARG = jsonb,
-    COMMUTATOR = ^=,
-    NEGATOR = =,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (jsonb, jsonb) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.enum_ne,
     LEFTARG = anyenum,
     RIGHTARG = anyenum,
