@@ -3,6 +3,9 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.3 - Development
 
+* Removed ^= operator alias for pg_lsn and jsonb datatypes for backward
+  compatibility
+
 Version 0.0.2 - 2015-04-27
 
 * Corrected schema usage privileges
