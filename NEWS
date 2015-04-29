@@ -1,6 +1,8 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015 credativ GmbH
 
+Version 0.0.4 - Development
+
 Version 0.0.3 - 2015-04-28
 
 * Removed ^= operator alias for pg_lsn and jsonb datatypes for backward
