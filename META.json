@@ -24,7 +24,7 @@
      "db2fce": {
        "file": "sql/db2fce.sql",
        "docfile": "README.db2fce",
-       "version": "0.0.1",
+       "version": "0.0.4",
        "abstract": "DB2 compatibility functions"
      }
    },
