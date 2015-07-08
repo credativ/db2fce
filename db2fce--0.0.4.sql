@@ -251,6 +251,14 @@ AS $$ SELECT db2."decimal"($1::text, $2, 0); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.dec(anyelement, integer) IS 'cast to decimal';
 
+-- HEX() function
+
+CREATE FUNCTION db2.hex(value text)
+RETURNS text
+AS $$ SELECT pg_catalog.encode($1::bytea, 'hex'); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.round(double precision, integer) IS 'convert value into hexadecimal string';
+
 -- ROUND() function, additional overloaded signature
 
 CREATE FUNCTION db2.round(value double precision, scale integer)
