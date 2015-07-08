@@ -111,7 +111,7 @@ COMMENT ON FUNCTION db2.locate(text, text) IS 'position of substring';
 
 CREATE FUNCTION db2.translate(text, text, text)
 RETURNS text
-AS $$ SELECT translate($1, $3, §2); $$
+AS $$ SELECT translate($1, $3, $2); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.translate(text, text, text) IS 'map a set of characters appearing in string';
 -- TODO: translate(text, text, text, pad)
