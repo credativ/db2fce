@@ -839,3 +839,75 @@ CREATE OPERATOR db2.^= (
     JOIN = neqjoinsel
 );
 COMMENT ON OPERATOR db2.^= (anyrange, anyrange) IS 'not equal';
+
+-- !! operator (alias for ||)
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.array_append,
+    LEFTARG = anyarray,
+    RIGHTARG = anyelement
+);
+COMMENT ON OPERATOR db2.!! (anyarray, anyelement) IS 'append element onto end of array'
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.array_prepend,
+    LEFTARG = anyelement,
+    RIGHTARG = anyarray
+);
+COMMENT ON OPERATOR db2.!! (anyelement, anyarray) IS 'prepend element onto front of array';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.array_cat,
+    LEFTARG = anyarray,
+    RIGHTARG = anyarray
+);
+COMMENT ON OPERATOR db2.!! (anyarray, anyarray) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.textcat,
+    LEFTARG = text,
+    RIGHTARG = text
+);
+COMMENT ON OPERATOR db2.!! (text, text) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.bitcat,
+    LEFTARG = bit varying,
+    RIGHTARG = bit varying
+);
+COMMENT ON OPERATOR db2.|| (bit varying, bit varying) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.byteacat,
+    LEFTARG = bytea,
+    RIGHTARG = bytea
+);
+COMMENT ON OPERATOR db2.!! (bytea, bytea) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.textanycat,
+    LEFTARG = text,
+    RIGHTARG = anynonarray
+);
+COMMENT ON OPERATOR db2.!! (text, anynonarray) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.anytextcat,
+    LEFTARG = anynonarray,
+    RIGHTARG = text
+);
+COMMENT ON OPERATOR db2.!! (anynonarray, text) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.tsvector_concat,
+    LEFTARG = tsvector,
+    RIGHTARG = tsvector
+);
+COMMENT ON OPERATOR db2.!! (tsvector, tsvector) IS 'concatenate';
+
+CREATE OPERATOR db2.!! (
+    PROCEDURE = pg_catalog.tsquery_or,
+    LEFTARG = tsquery,
+    RIGHTARG = tsquery
+);
+COMMENT ON OPERATOR db2.!! (tsquery, tsquery) IS 'OR-concatenate';
