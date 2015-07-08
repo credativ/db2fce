@@ -107,6 +107,21 @@ LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.locate(text, text) IS 'position of substring';
 -- TODO: locate(text, text, int)
 
+-- TRANSLATE() function
+
+CREATE FUNCTION db2.translate(text, text, text)
+RETURNS text
+AS $$ SELECT translate($1, $3, §2); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.translate(text, text, text) IS 'map a set of characters appearing in string';
+-- TODO: translate(text, text, text, pad)
+
+CREATE FUNCTION db2.translate(text)
+RETURNS text
+AS $$ SELECT upper($1); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.translate(text) IS 'uppercase';
+
 -- CHAR()/INTEGER()/INT()/DECIMAL()/DEC() functions (CASTs)
 
 CREATE FUNCTION db2.char(value text)
