@@ -122,7 +122,7 @@ AS $$ SELECT upper($1); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.translate(text) IS 'uppercase';
 
--- CHAR()/INTEGER()/INT()/DECIMAL()/DEC() functions (CASTs)
+-- CHAR()/INTEGER()/INT()/DOUBLE()/DECIMAL()/DEC() functions (CASTs)
 
 CREATE FUNCTION db2.char(value text)
 RETURNS char
@@ -159,6 +159,18 @@ RETURNS integer
 AS $$ SELECT cast(floor($1::float) AS INTEGER); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.int(anyelement) IS 'cast to integer';
+
+CREATE FUNCTION db2.double(value text)
+RETURNS double precision
+AS $$ SELECT cast($1 AS DOUBLE PRECISION); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.double(text) IS 'cast to double precision';
+
+CREATE FUNCTION db2.double(value anyelement)
+RETURNS double precision
+AS $$ SELECT cast($1 AS DOUBLE PRECISION); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.double(anyelement) IS 'cast to double precision';
 
 CREATE FUNCTION db2.decimal(value text)
 RETURNS decimal
