@@ -1,4 +1,4 @@
-/* contrib/db2fce--0.0.1.sql */
+/* contrib/db2fce--0.0.4.sql */
 
 -- complain if script is sourced in psql, rather than via CREATE EXTENSION
 \echo Use "CREATE EXTENSION db2fce" to load this file. \quit
