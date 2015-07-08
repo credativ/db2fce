@@ -76,25 +76,25 @@ COMMENT ON FUNCTION db2.year(timestamp) IS 'returns year part of specified date'
 
 CREATE FUNCTION db2.days(value text)
 RETURNS integer
-AS $$ SELECT to_date($1, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+AS $$ SELECT to_date($1, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD') + 1; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(text) IS 'returns days since 0000-01-01';
 
 CREATE FUNCTION db2.days(value date)
 RETURNS integer
-AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD') + 1; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(date) IS 'returns days since 0000-01-01';
 
 CREATE FUNCTION db2.days(value timestamptz)
 RETURNS integer
-AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD') + 1; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(timestamptz) IS 'returns days since 0000-01-01';
 
 CREATE FUNCTION db2.days(value timestamp)
 RETURNS integer
-AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD') + 1; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(timestamp) IS 'returns days since 0000-01-01';
 
