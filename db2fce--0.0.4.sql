@@ -123,25 +123,25 @@ COMMENT ON FUNCTION db2.char(anyelement) IS 'cast to char';
 
 CREATE FUNCTION db2.integer(value text)
 RETURNS integer
-AS $$ SELECT cast($1 AS INTEGER); $$
+AS $$ SELECT cast(floor($1::float) AS INTEGER); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.integer(text) IS 'cast to integer';
 
 CREATE FUNCTION db2.integer(value anyelement)
 RETURNS integer
-AS $$ SELECT cast($1 AS INTEGER); $$
+AS $$ SELECT cast(floor($1::float) AS INTEGER); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.integer(anyelement) IS 'cast to integer';
 
 CREATE FUNCTION db2.int(value text)
 RETURNS integer
-AS $$ SELECT cast($1 AS INTEGER); $$
+AS $$ SELECT cast(floor($1::float) AS INTEGER); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.int(text) IS 'cast to integer';
 
 CREATE FUNCTION db2.int(value anyelement)
 RETURNS integer
-AS $$ SELECT cast($1 AS INTEGER); $$
+AS $$ SELECT cast(floor($1::float) AS INTEGER); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.int(anyelement) IS 'cast to integer';
 
