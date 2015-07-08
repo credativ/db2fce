@@ -86,6 +86,18 @@ AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(date) IS 'returns days since 0000-01-01';
 
+CREATE FUNCTION db2.days(value timestamptz)
+RETURNS integer
+AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.days(timestamptz) IS 'returns days since 0000-01-01';
+
+CREATE FUNCTION db2.days(value timestamp)
+RETURNS integer
+AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD'); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.days(timestamp) IS 'returns days since 0000-01-01';
+
 -- LOCATE() function
 
 CREATE FUNCTION db2.locate(text, text)
