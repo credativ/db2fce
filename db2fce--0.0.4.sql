@@ -882,7 +882,7 @@ CREATE OPERATOR db2.!! (
     LEFTARG = anyarray,
     RIGHTARG = anyelement
 );
-COMMENT ON OPERATOR db2.!! (anyarray, anyelement) IS 'append element onto end of array'
+COMMENT ON OPERATOR db2.!! (anyarray, anyelement) IS 'append element onto end of array';
 
 CREATE OPERATOR db2.!! (
     PROCEDURE = pg_catalog.array_prepend,
@@ -910,7 +910,7 @@ CREATE OPERATOR db2.!! (
     LEFTARG = bit varying,
     RIGHTARG = bit varying
 );
-COMMENT ON OPERATOR db2.|| (bit varying, bit varying) IS 'concatenate';
+COMMENT ON OPERATOR db2.!! (bit varying, bit varying) IS 'concatenate';
 
 CREATE OPERATOR db2.!! (
     PROCEDURE = pg_catalog.byteacat,
