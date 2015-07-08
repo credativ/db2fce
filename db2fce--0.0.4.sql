@@ -257,7 +257,7 @@ CREATE FUNCTION db2.hex(value text)
 RETURNS text
 AS $$ SELECT pg_catalog.encode($1::bytea, 'hex'); $$
 LANGUAGE SQL IMMUTABLE STRICT;
-COMMENT ON FUNCTION db2.round(double precision, integer) IS 'convert value into hexadecimal string';
+COMMENT ON FUNCTION db2.hex(text) IS 'convert value into hexadecimal string';
 
 -- ROUND() function, additional overloaded signature
 
