@@ -109,6 +109,9 @@ SELECT (((date_part('year', $1) - date_part('year', $2)) * 12 +
        )::DECIMAL(31,15); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.months_between(date, date) IS 'number of months';
+-- TODO: MONTHS_BETWEEN('2008-03-31', '2008-02-29') should return 1.00 because
+-- both dates are last-of-month, see also
+-- http://www-01.ibm.com/support/knowledgecenter/SSEPEK_11.0.0/com.ibm.db2z11.doc.sqlref/src/tpc/db2z_bif_monthsbetween.dita
 
 CREATE FUNCTION db2.months_between(timestamp, timestamp)
 RETURNS numeric
