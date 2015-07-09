@@ -110,6 +110,120 @@ SELECT (((date_part('year', $1) - date_part('year', $2)) * 12 +
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.months_between(date, date) IS 'number of months';
 
+CREATE FUNCTION db2.months_between(timestamp, timestamp)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1) - date_part('year', $2)) * 12 +
+          date_part('month', $1) - date_part('month', $2)
+        ) + (((extract(day from $1) * 24 * 60 * 60 +
+               extract(hour from $1) * 60 * 60 +
+               extract(minute from $1) * 60 +
+               extract(second from $1)) -
+              (extract(day from $2) * 24 * 60 * 60 +
+               extract(hour from $2) * 60 * 60 +
+               extract(minute from $2) * 60 +
+               extract(second from $2))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(timestamp, timestamp) IS 'number of months';
+
+CREATE FUNCTION db2.months_between(date, timestamp)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1::timestamp) - date_part('year', $2)) * 12 +
+          date_part('month', $1::timestamp) - date_part('month', $2)
+        ) + (((extract(day from $1::timestamp) * 24 * 60 * 60 +
+               extract(hour from $1::timestamp) * 60 * 60 +
+               extract(minute from $1::timestamp) * 60 +
+               extract(second from $1::timestamp)) -
+              (extract(day from $2) * 24 * 60 * 60 +
+               extract(hour from $2) * 60 * 60 +
+               extract(minute from $2) * 60 +
+               extract(second from $2))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(date, timestamp) IS 'number of months';
+
+CREATE FUNCTION db2.months_between(timestamp, date)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1) - date_part('year', $2::timestamp)) * 12 +
+          date_part('month', $1) - date_part('month', $2::timestamp)
+        ) + (((extract(day from $1) * 24 * 60 * 60 +
+               extract(hour from $1) * 60 * 60 +
+               extract(minute from $1) * 60 +
+               extract(second from $1)) -
+              (extract(day from $2::timestamp) * 24 * 60 * 60 +
+               extract(hour from $2::timestamp) * 60 * 60 +
+               extract(minute from $2::timestamp) * 60 +
+               extract(second from $2::timestamp))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(timestamp, date) IS 'number of months';
+
+CREATE FUNCTION db2.months_between(timestamptz, timestamptz)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1::timestamp) - date_part('year', $2::timestamp)) * 12 +
+          date_part('month', $1::timestamp) - date_part('month', $2::timestamp)
+        ) + (((extract(day from $1::timestamp) * 24 * 60 * 60 +
+               extract(hour from $1::timestamp) * 60 * 60 +
+               extract(minute from $1::timestamp) * 60 +
+               extract(second from $1::timestamp)) -
+              (extract(day from $2::timestamp) * 24 * 60 * 60 +
+               extract(hour from $2::timestamp) * 60 * 60 +
+               extract(minute from $2::timestamp) * 60 +
+               extract(second from $2::timestamp))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(timestamptz, timestamptz) IS 'number of months';
+
+CREATE FUNCTION db2.months_between(timestamptz, date)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1::timestamp) - date_part('year', $2::timestamp)) * 12 +
+          date_part('month', $1::timestamp) - date_part('month', $2::timestamp)
+        ) + (((extract(day from $1::timestamp) * 24 * 60 * 60 +
+               extract(hour from $1::timestamp) * 60 * 60 +
+               extract(minute from $1::timestamp) * 60 +
+               extract(second from $1::timestamp)) -
+              (extract(day from $2::timestamp) * 24 * 60 * 60 +
+               extract(hour from $2::timestamp) * 60 * 60 +
+               extract(minute from $2::timestamp) * 60 +
+               extract(second from $2::timestamp))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(timestamptz, date) IS 'number of months';
+
+CREATE FUNCTION db2.months_between(date, timestamptz)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1::timestamp) - date_part('year', $2::timestamp)) * 12 +
+          date_part('month', $1::timestamp) - date_part('month', $2::timestamp)
+        ) + (((extract(day from $1::timestamp) * 24 * 60 * 60 +
+               extract(hour from $1::timestamp) * 60 * 60 +
+               extract(minute from $1::timestamp) * 60 +
+               extract(second from $1::timestamp)) -
+              (extract(day from $2::timestamp) * 24 * 60 * 60 +
+               extract(hour from $2::timestamp) * 60 * 60 +
+               extract(minute from $2::timestamp) * 60 +
+               extract(second from $2::timestamp))
+             ) / (24 * 60 * 60)
+            ) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(date, timestamptz) IS 'number of months';
+
 -- LOCATE() function
 
 CREATE FUNCTION db2.locate(text, text)
