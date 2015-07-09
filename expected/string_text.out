@@ -1,0 +1,47 @@
+-- LOCATE()
+SELECT LOCATE('N', 'DINING') FROM SYSIBM.SYSDUMMY1;
+ERROR:  function locate(unknown, unknown) does not exist
+LINE 1: SELECT LOCATE('N', 'DINING') FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+-- TRANSLATE()
+SELECT TRANSLATE('12345', 'ax', '143') FROM SYSIBM.SYSDUMMY1;
+ translate 
+-----------
+ 12345
+(1 row)
+
+SELECT TRANSLATE('Hanauma Bay') FROM SYSIBM.SYSDUMMY1;
+ERROR:  function translate(unknown) does not exist
+LINE 1: SELECT TRANSLATE('Hanauma Bay') FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT TRANSLATE('Hanauma Bay', 'j', 'B'	) FROM SYSIBM.SYSDUMMY1;
+  translate  
+-------------
+ Hanauma Bay
+(1 row)
+
+SELECT TRANSLATE('Hanauma Bay', 'ei', 'aa') FROM SYSIBM.SYSDUMMY1;
+  translate  
+-------------
+ Hanauma Bay
+(1 row)
+
+SELECT TRANSLATE('Hanauma Bay', 'r', 'Bu') FROM SYSIBM.SYSDUMMY1;
+  translate  
+-------------
+ Hanauma Bay
+(1 row)
+
+-- HEX()
+SELECT HEX('000020') FROM SYSIBM.SYSDUMMY1;
+ERROR:  function hex(unknown) does not exist
+LINE 1: SELECT HEX('000020') FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT HEX(000020) FROM SYSIBM.SYSDUMMY1; -- WRONG
+ERROR:  function hex(integer) does not exist
+LINE 1: SELECT HEX(000020) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

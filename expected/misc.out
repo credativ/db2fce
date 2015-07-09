@@ -1,0 +1,24 @@
+-- misc tests
+SELECT INT(5) - (INT(5) / 1000) * 1000 FROM SYSIBM.SYSDUMMY1;
+ERROR:  syntax error at or near "("
+LINE 1: SELECT INT(5) - (INT(5) / 1000) * 1000 FROM SYSIBM.SYSDUMMY1...
+                  ^
+SELECT 5 / 1000 FROM SYSIBM.SYSDUMMY1;
+ ?column? 
+----------
+        0
+(1 row)
+
+SELECT 5.0 / 1000 FROM SYSIBM.SYSDUMMY1;
+        ?column?        
+------------------------
+ 0.00500000000000000000
+(1 row)
+
+--
+SELECT * FROM SYSIBM.SYSDUMMY1 FETCH FIRST 1 ROWS ONLY;
+ ibmreqd 
+---------
+ X
+(1 row)
+

@@ -1,0 +1,41 @@
+-- VALUE()
+SELECT VALUE(1) FROM SYSIBM.SYSDUMMY1; -- DB2 ERROR
+ERROR:  function value(integer) does not exist
+LINE 1: SELECT VALUE(1) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT VALUE(NULL) FROM SYSIBM.SYSDUMMY1; -- DB2 ERROR
+ERROR:  function value(unknown) does not exist
+LINE 1: SELECT VALUE(NULL) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT VALUE(NULL, NULL) FROM SYSIBM.SYSDUMMY1; -- DB2 ERROR
+ERROR:  function value(unknown, unknown) does not exist
+LINE 1: SELECT VALUE(NULL, NULL) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT VALUE(NULL, 1, NULL) FROM SYSIBM.SYSDUMMY1; -- DB2 ERROR
+ERROR:  function value(unknown, integer, unknown) does not exist
+LINE 1: SELECT VALUE(NULL, 1, NULL) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+SELECT VALUE(NULL, '1', NULL) FROM SYSIBM.SYSDUMMY1; -- DB2 ERROR
+ERROR:  function value(unknown, unknown, unknown) does not exist
+LINE 1: SELECT VALUE(NULL, '1', NULL) FROM SYSIBM.SYSDUMMY1;
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+-- ^= operator
+SELECT 1 FROM SYSIBM.SYSDUMMY1 WHERE 1 ^= 2;
+ERROR:  operator is only a shell: integer ^= integer
+LINE 1: SELECT 1 FROM SYSIBM.SYSDUMMY1 WHERE 1 ^= 2;
+                                               ^
+SELECT 1 FROM SYSIBM.SYSDUMMY1 WHERE 1 ^= 1;
+ERROR:  operator is only a shell: integer ^= integer
+LINE 1: SELECT 1 FROM SYSIBM.SYSDUMMY1 WHERE 1 ^= 1;
+                                               ^
+-- !! operator
+SELECT 'FOO' !! ' BAR' FROM SYSIBM.SYSDUMMY1;
+ERROR:  operator does not exist: unknown !! unknown
+LINE 1: SELECT 'FOO' !! ' BAR' FROM SYSIBM.SYSDUMMY1;
+                     ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.

@@ -1,0 +1,1 @@
+CREATE EXTENSION db2fce;
