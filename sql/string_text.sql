@@ -1,3 +1,5 @@
+SET search_path = db2,pg_catalog,public;
+
 -- LOCATE()
 SELECT LOCATE('N', 'DINING') FROM SYSIBM.SYSDUMMY1;
 

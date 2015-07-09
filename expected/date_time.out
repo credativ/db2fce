@@ -1,170 +1,203 @@
+SET search_path = db2,pg_catalog,public;
 -- MICROSECOND()
 SELECT MICROSECOND('0001-01-01 00:00:00.100000') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function microsecond(unknown) does not exist
-LINE 1: SELECT MICROSECOND('0001-01-01 00:00:00.100000') FROM SYSIBM...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ microsecond 
+-------------
+      100000
+(1 row)
+
 SELECT MICROSECOND('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function microsecond(unknown) does not exist
-LINE 1: SELECT MICROSECOND('0001-01-01 12:35:30.100001') FROM SYSIBM...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ microsecond 
+-------------
+    30100001
+(1 row)
+
 -- SECOND()
 SELECT SECOND('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function second(unknown) does not exist
-LINE 1: SELECT SECOND('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSD...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ second 
+--------
+     30
+(1 row)
+
 -- MINUTE()
 SELECT MINUTE('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function minute(unknown) does not exist
-LINE 1: SELECT MINUTE('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSD...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ minute 
+--------
+     35
+(1 row)
+
 SELECT MINUTE('0001-01-01 12:35:30.100001+02:00') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function minute(unknown) does not exist
-LINE 1: SELECT MINUTE('0001-01-01 12:35:30.100001+02:00') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ minute 
+--------
+     35
+(1 row)
+
 -- HOUR()
 SELECT HOUR('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function hour(unknown) does not exist
-LINE 1: SELECT HOUR('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUM...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ hour 
+------
+   12
+(1 row)
+
 SELECT HOUR('0001-01-01 12:35:30.100001+02:00') FROM SYSIBM.SYSDUMMY1; -- WRONG
-ERROR:  function hour(unknown) does not exist
-LINE 1: SELECT HOUR('0001-01-01 12:35:30.100001+02:00') FROM SYSIBM....
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ hour 
+------
+   12
+(1 row)
+
 -- DAY()
 SELECT DAY('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function day(unknown) does not exist
-LINE 1: SELECT DAY('0001-01-01 12:35:30.100001') FROM SYSIBM.SYSDUMM...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ day 
+-----
+   1
+(1 row)
+
 SELECT DAY('1000-01-01') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function day(unknown) does not exist
-LINE 1: SELECT DAY('1000-01-01') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ day 
+-----
+   1
+(1 row)
+
 SELECT DAY('0004-02-29') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function day(unknown) does not exist
-LINE 1: SELECT DAY('0004-02-29') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ day 
+-----
+  29
+(1 row)
+
 -- YEAR()
 SELECT YEAR('0001-01-01') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function year(unknown) does not exist
-LINE 1: SELECT YEAR('0001-01-01') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ year 
+------
+    1
+(1 row)
+
 SELECT YEAR(CURRENT_TIMESTAMP) FROM SYSIBM.SYSDUMMY1;
-ERROR:  function year(timestamp with time zone) does not exist
-LINE 1: SELECT YEAR(CURRENT_TIMESTAMP) FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ year 
+------
+ 2015
+(1 row)
+
 -- DAYS()
 SELECT DAYS('1000-01-01') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function days(unknown) does not exist
-LINE 1: SELECT DAYS('1000-01-01') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  days  
+--------
+ 364878
+(1 row)
+
 SELECT DAYS('0000-01-01') FROM SYSIBM.SYSDUMMY1; -- ERROR
-ERROR:  function days(unknown) does not exist
-LINE 1: SELECT DAYS('0000-01-01') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ days 
+------
+ -365
+(1 row)
+
 SELECT DAYS('0001-01-01') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function days(unknown) does not exist
-LINE 1: SELECT DAYS('0001-01-01') FROM SYSIBM.SYSDUMMY1;
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ days 
+------
+    1
+(1 row)
+
 -- MONTHS_BETWEEN()
 SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-01') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-01') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ 12.000000000000000
+(1 row)
+
 SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-02') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-02') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ 11.967741935483900
+(1 row)
+
 SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-03') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('0002-01-01', '0001-01-03') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ 11.935483870967700
+(1 row)
+
 SELECT MONTHS_BETWEEN('0003-01-01', '0001-01-02') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('0003-01-01', '0001-01-02') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ 23.967741935483900
+(1 row)
+
 SELECT MONTHS_BETWEEN('2008-01-17', '2008-02-17') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2008-01-17', '2008-02-17') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ -1.000000000000000
+(1 row)
+
 SELECT MONTHS_BETWEEN('2008-02-17', '2008-03-17') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2008-02-17', '2008-03-17') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ -1.000000000000000
+(1 row)
+
 SELECT MONTHS_BETWEEN('2008-02-20', '2008-01-17') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2008-02-20', '2008-01-17') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 1.096774193548390
+(1 row)
+
 SELECT MONTHS_BETWEEN('2008-01-17', '2008-02-20') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2008-01-17', '2008-02-20') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+   months_between   
+--------------------
+ -1.096774193548390
+(1 row)
+
 SELECT MONTHS_BETWEEN('2008-02-20', '2008-01-20') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2008-02-20', '2008-01-20') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 1.000000000000000
+(1 row)
+
 SELECT MONTHS_BETWEEN('2014-07-09', '2014-06-10') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2014-07-09', '2014-06-10') FROM SYSIB...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 0.967741935483871
+(1 row)
+
 SELECT MONTHS_BETWEEN('2014-07-09 14:00:00.000000', '2014-06-10') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2014-07-09 14:00:00.000000', '2014-06...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 0.986559139784946
+(1 row)
+
 SELECT MONTHS_BETWEEN('2014-07-09 14:30:00.000000', '2014-06-10') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2014-07-09 14:30:00.000000', '2014-06...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 0.987231182795699
+(1 row)
+
 SELECT MONTHS_BETWEEN('2014-07-09 14:30:30.000000', '2014-06-10') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2014-07-09 14:30:30.000000', '2014-06...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 0.987242383512545
+(1 row)
+
 SELECT MONTHS_BETWEEN('2014-07-09 14:30:30.000000+06:00', '2014-06-10') FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT MONTHS_BETWEEN('2014-07-09 14:30:30.000000+06:00', '2...
-               ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+  months_between   
+-------------------
+ 0.969769265232975
+(1 row)
+
 SELECT ROUND(MONTHS_BETWEEN('2008-03-29', '2008-02-29')*31,2) FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT ROUND(MONTHS_BETWEEN('2008-03-29', '2008-02-29')*31,2...
-                     ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ round 
+-------
+ 31.00
+(1 row)
+
 SELECT ROUND(MONTHS_BETWEEN('2008-03-30', '2008-02-29')*31,2) FROM SYSIBM.SYSDUMMY1;
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT ROUND(MONTHS_BETWEEN('2008-03-30', '2008-02-29')*31,2...
-                     ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ round 
+-------
+ 32.00
+(1 row)
+
 SELECT ROUND(MONTHS_BETWEEN('2008-03-31', '2008-02-29')*31,2) FROM SYSIBM.SYSDUMMY1; -- WRONG ("The result 
-ERROR:  function months_between(unknown, unknown) does not exist
-LINE 1: SELECT ROUND(MONTHS_BETWEEN('2008-03-31', '2008-02-29')*31,2...
-                     ^
-HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+ round 
+-------
+ 33.00
+(1 row)
+
 -- is not 33 because both dates are the last day of their respective month, and so the result is only based 
 -- on the year and month portions.")
