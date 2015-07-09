@@ -3,6 +3,8 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.5 - Development
 
+* Added testsuite
+
 Version 0.0.4 - 2015-07-09
 
 * Added !! operator alias for ||
