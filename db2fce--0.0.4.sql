@@ -16,6 +16,32 @@ GRANT SELECT, REFERENCES ON sysibm.sysdummy1 TO PUBLIC;
 CREATE SCHEMA db2;
 GRANT USAGE ON SCHEMA db2 TO PUBLIC;
 
+-- MICROSECOND()/SECOND()/MINUTE()/HOUR() functions
+
+CREATE FUNCTION db2.microsecond(value timestamp)
+RETURNS integer
+AS $$ SELECT date_part('microsecond', $1)::integer; $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.microsecond(timestamp) IS 'returns microsecond part of specified timestamp';
+
+CREATE FUNCTION db2.second(value timestamp)
+RETURNS integer
+AS $$ SELECT date_part('second', $1)::integer; $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.second(timestamp) IS 'returns second part of specified timestamp';
+
+CREATE FUNCTION db2.minute(value timestamp)
+RETURNS integer
+AS $$ SELECT date_part('minute', $1)::integer; $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.minute(timestamp) IS 'returns minute part of specified timestamp';
+
+CREATE FUNCTION db2.hour(value timestamp)
+RETURNS integer
+AS $$ SELECT date_part('hour', $1)::integer; $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.hour(timestamp) IS 'returns hour part of specified timestamp';
+
 -- DAY()/MONTH()/YEAR() functions
 
 CREATE FUNCTION db2.day(value date)

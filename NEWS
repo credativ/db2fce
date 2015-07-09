@@ -8,6 +8,7 @@ Version 0.0.4 - Development
 * Added hex() function
 * Added double() function
 * Added months_between() function
+* Added microsecond(), second(), minute() and hour() functions
 
 Version 0.0.3 - 2015-04-28
 
