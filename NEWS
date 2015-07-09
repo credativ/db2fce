@@ -7,7 +7,7 @@ Version 0.0.4 - Development
 * Added translate() function
 * Added hex() function
 * Added double() function
-* Added months_betwenn() function
+* Added months_between() function
 
 Version 0.0.3 - 2015-04-28
 
