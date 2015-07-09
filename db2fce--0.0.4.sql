@@ -98,6 +98,18 @@ AS $$ SELECT to_date($1::text, 'YYYY-MM-DD') - to_date('0001-01-01', 'YYYY-MM-DD
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.days(timestamp) IS 'returns days since 0000-01-01';
 
+-- MONTHS_BETWEEN() function
+
+CREATE FUNCTION db2.months_between(date, date)
+RETURNS numeric
+AS $$
+SELECT (((date_part('year', $1) - date_part('year', $2)) * 12 +
+          date_part('month', $1) - date_part('month', $2)
+        ) + (date_part('day', $1) - date_part('day', $2)) / 31.0
+       )::DECIMAL(31,15); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.months_between(date, date) IS 'number of months';
+
 -- LOCATE() function
 
 CREATE FUNCTION db2.locate(text, text)
