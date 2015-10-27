@@ -30,7 +30,9 @@ If ```pg_config``` is not found, you might have to pass its location via the
 Test Suite
 ----------
 
-An incomplete test suite is available. 
+An incomplete test suite is available.  It can be exercised via ```make
+installcheck```.  The user running the testsuite probably needs elevated
+privileges in the ```contrib_regress``` database.
 
 License
 -------
