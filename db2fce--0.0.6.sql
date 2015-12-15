@@ -277,6 +277,12 @@ AS $$ SELECT upper($1); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.translate(text) IS 'uppercase';
 
+CREATE FUNCTION db2.lcase(value text)
+RETURNS text
+AS $$ SELECT lower($1); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.lcase(text) IS 'lowercase';
+
 -- CHAR()/INTEGER()/INT()/DOUBLE()/DECIMAL()/DEC() functions (CASTs)
 
 CREATE FUNCTION db2.char(value text)

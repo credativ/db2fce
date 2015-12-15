@@ -3,6 +3,8 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.6 - Development
 
+* Added lcase() function
+
 Version 0.0.5 - 2015-10-27
 
 * Added testsuite
