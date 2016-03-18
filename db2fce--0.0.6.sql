@@ -283,6 +283,12 @@ AS $$ SELECT lower($1); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.lcase(text) IS 'lowercase';
 
+CREATE FUNCTION db2.strip(value text)
+RETURNS text
+AS $$ SELECT trim($1); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.strip(text) IS 'Removes blanks from the beginning and end of a string. Alias for trim().';
+
 -- CHAR()/INTEGER()/INT()/DOUBLE()/DECIMAL()/DEC() functions (CASTs)
 
 CREATE FUNCTION db2.char(value text)
