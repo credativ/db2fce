@@ -1,5 +1,6 @@
 EXTENSION = db2fce
-DATA = db2fce--0.0.6.sql
+DATA = db2fce--0.0.7.sql
+
 DOCS = COPYRIGHT.db2fce
 
 REGRESS = init date_time misc numeric operator string_text

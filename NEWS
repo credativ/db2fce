@@ -1,6 +1,8 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015 credativ GmbH
 
+Version 0.0.7 - Development
+
 Version 0.0.6 - 2016-02-24
 
 * Added lcase() function
