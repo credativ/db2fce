@@ -3,6 +3,8 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.8 - Development
 
+* Added strip() and digits() functions (Balazs Barany)
+
 Version 0.0.7 - 2016-05-09
 
 * Added update scripts through 0.0.4
