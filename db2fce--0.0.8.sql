@@ -20,13 +20,13 @@ GRANT USAGE ON SCHEMA db2 TO PUBLIC;
 
 CREATE FUNCTION db2.microsecond(value timestamp)
 RETURNS integer
-AS $$ SELECT date_part('microsecond', $1)::integer; $$
+AS $$ SELECT date_part('microsecond', $1) - floor(date_part('second', $1)) * 1000000; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.microsecond(timestamp) IS 'returns microsecond part of specified timestamp';
 
 CREATE FUNCTION db2.second(value timestamp)
 RETURNS integer
-AS $$ SELECT date_part('second', $1)::integer; $$
+AS $$ SELECT floor(date_part('second', $1)); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.second(timestamp) IS 'returns second part of specified timestamp';
 
