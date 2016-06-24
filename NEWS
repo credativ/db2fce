@@ -3,6 +3,9 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.9 - Development
 
+* Modified seconds() and microsseconds() functions to be
+  DB2 compatible (Helmut Hartmann)
+
 Version 0.0.8 - 2016-05-09
 
 * Added strip() and digits() functions (Balazs Barany)
