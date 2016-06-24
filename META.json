@@ -2,7 +2,7 @@
    "name": "db2fce",
    "abstract": "DB2 compatibility environment for PostgreSQL",
    "description": "This module allows usage of well known DB2 functions inside PostgreSQL",
-   "version": "0.0.6",
+   "version": "0.0.8",
    "maintainer": [
       "Michael Banck <michael.banck@credativ.de>"
    ],
@@ -24,7 +24,7 @@
      "db2fce": {
        "file": "sql/db2fce.sql",
        "docfile": "README.db2fce",
-       "version": "0.0.6",
+       "version": "0.0.8",
        "abstract": "DB2 compatibility environment for PostgreSQL"
      }
    },
