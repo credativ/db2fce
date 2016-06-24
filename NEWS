@@ -1,7 +1,7 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015 credativ GmbH
 
-Version 0.0.9 - Development
+Version 0.0.9 - 2016-06-24
 
 * Modified seconds() and microsseconds() functions to be
   DB2 compatible (Helmut Hartmann)
