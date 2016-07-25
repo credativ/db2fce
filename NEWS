@@ -1,7 +1,7 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015-2016 credativ GmbH
 
-Version 0.0.10 - Development
+Version 0.0.10 - 2016-07-25
 
 * Added date() and time() functions (Balazs Barany)
 
