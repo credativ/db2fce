@@ -3,6 +3,8 @@ Copyright (C) 2015 credativ GmbH
 
 Version 0.0.10 - Development
 
+* Added date() and time() functions (Balazs Barany)
+
 Version 0.0.9 - 2016-06-24
 
 * Modified seconds() and microsseconds() functions to be

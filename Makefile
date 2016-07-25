@@ -4,7 +4,8 @@ DATA = db2fce--0.0.10.sql 		\
 	db2fce--0.0.5--0.0.6.sql	\
 	db2fce--0.0.6--0.0.7.sql	\
 	db2fce--0.0.7--0.0.8.sql	\
-	db2fce--0.0.8--0.0.9.sql
+	db2fce--0.0.8--0.0.9.sql	\
+	db2fce--0.0.9--0.0.10.sql
 
 DOCS = COPYRIGHT.db2fce
 
