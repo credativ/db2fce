@@ -1,5 +1,5 @@
 EXTENSION = db2fce
-DATA = db2fce--0.0.9.sql 		\
+DATA = db2fce--0.0.10.sql 		\
 	db2fce--0.0.4--0.0.5.sql	\
 	db2fce--0.0.5--0.0.6.sql	\
 	db2fce--0.0.6--0.0.7.sql	\
