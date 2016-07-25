@@ -1,4 +1,4 @@
-/* contrib/db2fce--0.0.8.sql */
+/* contrib/db2fce--0.0.10.sql */
 
 -- complain if script is sourced in psql, rather than via CREATE EXTENSION
 \echo Use "CREATE EXTENSION db2fce" to load this file. \quit
@@ -20,13 +20,13 @@ GRANT USAGE ON SCHEMA db2 TO PUBLIC;
 
 CREATE FUNCTION db2.microsecond(value timestamp)
 RETURNS integer
-AS $$ SELECT date_part('microsecond', $1) - floor(date_part('second', $1)) * 1000000; $$
+AS $$ SELECT date_part('microsecond', $1)::integer - 1000000 * floor(date_part('second', $1))::integer; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.microsecond(timestamp) IS 'returns microsecond part of specified timestamp';
 
 CREATE FUNCTION db2.second(value timestamp)
 RETURNS integer
-AS $$ SELECT floor(date_part('second', $1)); $$
+AS $$ SELECT floor(date_part('second', $1))::integer; $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.second(timestamp) IS 'returns second part of specified timestamp';
 
@@ -252,6 +252,44 @@ SELECT (((date_part('year', $1::timestamp) - date_part('year', $2::timestamp)) *
        )::DECIMAL(31,15); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.months_between(date, timestamptz) IS 'number of months';
+
+-- DATE()/TIME() functions
+
+CREATE OR REPLACE FUNCTION db2.date(value timestamp)
+RETURNS date
+AS $$ SELECT cast(date_trunc('day', $1) as date); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.date(timestamp) IS 'Returns the date part of a timestamp';
+
+CREATE OR REPLACE FUNCTION db2.date(value timestamp with time zone)
+RETURNS date
+AS $$ SELECT cast(date_trunc('day', $1) as date); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.date(timestamp with time zone) IS 'Returns the date part of a timestamp';
+
+CREATE OR REPLACE FUNCTION db2.date(value text)
+RETURNS date
+AS $$ SELECT cast(date_trunc('day', $1::timestamp) as date); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.date(text) IS 'Returns the date part of a timestamp';
+
+CREATE OR REPLACE FUNCTION db2.time(value timestamp)
+RETURNS time
+AS $$ SELECT cast($1 as time); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.time(timestamp) IS 'Returns the time part of a timestamp';
+
+CREATE OR REPLACE FUNCTION db2.time(value timestamp with time zone)
+RETURNS time
+AS $$ SELECT cast($1 as time); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.time(timestamp with time zone) IS 'Returns the time part of a timestamp';
+
+CREATE OR REPLACE FUNCTION db2.time(value text)
+RETURNS time
+AS $$ SELECT cast($1::timestamp as time); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.time(text) IS 'Returns the time part of a timestamp';
 
 -- LOCATE() function
 
