@@ -1,5 +1,5 @@
 # DB2 fce extension
 comment = 'DB2 compatibility environment for PostgreSQL'
-default_version = '0.0.10'
+default_version = '0.0.11'
 module_pathname = '$libdir/db2fce'
 relocatable = false
