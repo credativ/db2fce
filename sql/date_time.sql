@@ -51,3 +51,14 @@ SELECT ROUND(MONTHS_BETWEEN('2008-03-30', '2008-02-29')*31,2) FROM SYSIBM.SYSDUM
 SELECT ROUND(MONTHS_BETWEEN('2008-03-31', '2008-02-29')*31,2) FROM SYSIBM.SYSDUMMY1; -- WRONG ("The result 
 -- is not 33 because both dates are the last day of their respective month, and so the result is only based 
 -- on the year and month portions.")
+
+-- TIMESTAMP_FORMAT()
+SELECT timestamp_format('2017-04-16 23:59:59.123456789012', 'YYYY-MM-DD HH24:MI:SS.FF12');
+SELECT timestamp_format('2017-04-16 23:59:59.123456789', 'YYYY-MM-DD HH24:MI:SS.FF9');
+SELECT timestamp_format('2017-04-16 23:59:59.123456', 'YYYY-MM-DD HH24:MI:SS.FF');
+SELECT timestamp_format('2017-04-16 23:59:59.1234', 'YYYY-MM-DD HH24:MI:SS.FF');
+SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS.FF');
+SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS');
+SELECT timestamp_format('2017-04-16 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
+SELECT timestamp_format('2017-May-16 23:59:59', 'YYYY-Mon-DD HH24:MI:SS');
+SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS'); -- WRONG (DB2 gives an error)
