@@ -49,3 +49,17 @@ ERROR:  function hex(integer) does not exist
 LINE 1: SELECT HEX(000020) FROM SYSIBM.SYSDUMMY1;
                ^
 HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+-- UPPER(text, text)
+SELECT UPPER('Müller', 'de_DE') FROM SYSIBM.SYSDUMMY1;
+ upper
+--------
+ MÜLLER
+(1 row)
+
+-- LOWER(text, text)
+SELECT LOWER('MÜLLER', 'de_DE') FROM SYSIBM.SYSDUMMY1;
+ lower  
+--------
+ müller
+(1 Zeile)
