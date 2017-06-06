@@ -86,7 +86,7 @@ SELECT YEAR('0001-01-01') FROM SYSIBM.SYSDUMMY1;
 SELECT YEAR(CURRENT_TIMESTAMP) FROM SYSIBM.SYSDUMMY1;
  year 
 ------
- 2015
+ 2017
 (1 row)
 
 -- DAYS()
@@ -213,57 +213,58 @@ SELECT ROUND(MONTHS_BETWEEN('2008-03-31', '2008-02-29')*31,2) FROM SYSIBM.SYSDUM
 
 -- is not 33 because both dates are the last day of their respective month, and so the result is only based 
 -- on the year and month portions.")
-
+-- TIMESTAMP_FORMAT()
 SELECT timestamp_format('2017-04-16 23:59:59.123456789012', 'YYYY-MM-DD HH24:MI:SS.FF12');
-      timestamp_format      
-----------------------------
- 2017-04-16 23:59:59.123456
+        timestamp_format         
+---------------------------------
+ Sun Apr 16 23:59:59.123456 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59.123456789', 'YYYY-MM-DD HH24:MI:SS.FF9');
-      timestamp_format      
-----------------------------
- 2017-04-16 23:59:59.123456
+        timestamp_format         
+---------------------------------
+ Sun Apr 16 23:59:59.123456 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59.123456', 'YYYY-MM-DD HH24:MI:SS.FF');
-      timestamp_format      
-----------------------------
- 2017-04-16 23:59:59.123456
+        timestamp_format         
+---------------------------------
+ Sun Apr 16 23:59:59.123456 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59.1234', 'YYYY-MM-DD HH24:MI:SS.FF');
-     timestamp_format     
---------------------------
- 2017-04-16 23:59:59.1234
+       timestamp_format        
+-------------------------------
+ Sun Apr 16 23:59:59.1234 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS.FF');
-    timestamp_format    
-------------------------
- 2017-04-16 23:59:59.12
+      timestamp_format       
+-----------------------------
+ Sun Apr 16 23:59:59.12 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS');
-  timestamp_format   
----------------------
- 2017-04-16 23:59:59
+     timestamp_format     
+--------------------------
+ Sun Apr 16 23:59:59 2017
 (1 row)
 
 SELECT timestamp_format('2017-04-16 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
-  timestamp_format   
----------------------
- 2017-04-16 23:59:59
+     timestamp_format     
+--------------------------
+ Sun Apr 16 23:59:59 2017
 (1 row)
 
 SELECT timestamp_format('2017-May-16 23:59:59', 'YYYY-Mon-DD HH24:MI:SS');
-  timestamp_format   
----------------------
- 2017-05-16 23:59:59
+     timestamp_format     
+--------------------------
+ Tue May 16 23:59:59 2017
 (1 row)
 
-SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS');
-  timestamp_format   
----------------------
- 2017-03-01 13:00:00
+SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS'); -- WRONG (DB2 gives an error)
+     timestamp_format     
+--------------------------
+ Wed Mar 01 13:00:00 2017
 (1 row)
+
