@@ -4,20 +4,22 @@ db2fce, a DB2 compatibility environment for PostgreSQL
 This extension provides a variety of DB2 functions, types and operators for
 PostgreSQL.
 
-All functions, types and operators are created in the ```db2``` schema. Adding
-this to the ```search_path``` allows for unmodifed use of (some) DB2 SQL
+The extension is relocatable, i.e. all functions, types and operators are
+created in the selected schema, e.g. ```db2```. Adding
+this to the ```search_path``` allows for unmodified use of (some) DB2 SQL
 statements.  
 
-Note that some of the provied functions like ```INT()``` still need to be
-schema-qualified.
+Note that some of the provided functions like ```INT()``` or ```TRANSLATE()```
+always need to be schema-qualified as they overload functions in
+```pg_catalog```.
 
 SYSIBM.SYSDUMMY1
 ----------------
 
-DB2 SELECT statesments require a FROM clause with a table or view, even if no
+DB2 SELECT statements require a FROM clause with a table or view, even if no
 table/view columns are returned (as in PostgreSQL's "SELECT 1;").  In this
-case, the ```SYSIBM.SYSDUMMY1``` view is customary used by DB2.  The SYSIBM
-schema and this view is provided by db2fce.
+case, the ```SYSIBM.SYSDUMMY1``` view is customarily used by DB2.  The SYSIBM
+schema and this view are provided by db2fce.
 
 Installation
 ------------

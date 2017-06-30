@@ -1,5 +1,3 @@
-SET search_path = db2,pg_catalog,public;
-
 -- misc tests
 SELECT INT(5) - (INT(5) / 1000) * 1000 FROM SYSIBM.SYSDUMMY1;
 SELECT 5 / 1000 FROM SYSIBM.SYSDUMMY1;

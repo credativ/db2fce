@@ -2,4 +2,3 @@
 comment = 'DB2 compatibility environment for PostgreSQL'
 default_version = '0.0.12'
 module_pathname = '$libdir/db2fce'
-relocatable = false

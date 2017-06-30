@@ -1,4 +1,3 @@
-SET search_path = db2,pg_catalog,public;
 -- LOCATE()
 SELECT LOCATE('N', 'DINING') FROM SYSIBM.SYSDUMMY1;
  locate 
@@ -7,31 +6,31 @@ SELECT LOCATE('N', 'DINING') FROM SYSIBM.SYSDUMMY1;
 (1 row)
 
 -- TRANSLATE()
-SELECT TRANSLATE('12345', 'ax', '143') FROM SYSIBM.SYSDUMMY1;
+SELECT public.TRANSLATE('12345', 'ax', '143') FROM SYSIBM.SYSDUMMY1;
  translate 
 -----------
  a2x5
 (1 row)
 
-SELECT TRANSLATE('Hanauma Bay') FROM SYSIBM.SYSDUMMY1;
+SELECT public.TRANSLATE('Hanauma Bay') FROM SYSIBM.SYSDUMMY1;
   translate  
 -------------
  HANAUMA BAY
 (1 row)
 
-SELECT TRANSLATE('Hanauma Bay', 'j', 'B'	) FROM SYSIBM.SYSDUMMY1;
+SELECT public.TRANSLATE('Hanauma Bay', 'j', 'B'	) FROM SYSIBM.SYSDUMMY1;
   translate  
 -------------
  Hanauma jay
 (1 row)
 
-SELECT TRANSLATE('Hanauma Bay', 'ei', 'aa') FROM SYSIBM.SYSDUMMY1;
+SELECT public.TRANSLATE('Hanauma Bay', 'ei', 'aa') FROM SYSIBM.SYSDUMMY1;
   translate  
 -------------
  Heneume Bey
 (1 row)
 
-SELECT TRANSLATE('Hanauma Bay', 'r', 'Bu') FROM SYSIBM.SYSDUMMY1;
+SELECT public.TRANSLATE('Hanauma Bay', 'r', 'Bu') FROM SYSIBM.SYSDUMMY1;
  translate  
 ------------
  Hanama ray
