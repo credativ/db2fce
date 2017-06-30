@@ -1,6 +1,8 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015-2017 credativ GmbH
 
+Version 0.0.13 - Development
+
 Version 0.0.12 - 2017-06-30
 
 * Added upper() and lower() functions (Balazs Barany)
