@@ -13,6 +13,8 @@ DATA = db2fce--${EXT_VERSION}.sql	\
 
 noinst_DATA = db2fce.sql
 
+EXTRA_CLEAN = db2fce--${EXT_VERSION}.sql
+
 DOCS = COPYRIGHT.db2fce
 
 REGRESS = init date_time misc numeric operator string_text
@@ -22,9 +24,6 @@ PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 
 db2fce--${EXT_VERSION}.sql:
-	cp db2fce.sql db2fce--${EXT_VERSION}.sql
+	sed s/@VERSION@/${EXT_VERSION}/ db2fce.sql > db2fce--${EXT_VERSION}.sql
 
 all: db2fce--${EXT_VERSION}.sql
-
-distclean:
-	rm -f db2fce--${EXT_VERSION}.sql
