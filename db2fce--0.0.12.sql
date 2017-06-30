@@ -345,6 +345,23 @@ AS $$ SELECT lower($1); $$
 LANGUAGE SQL IMMUTABLE STRICT;
 COMMENT ON FUNCTION db2.lcase(text) IS 'lowercase';
 
+-- UPPER(text, text): DB2 allows the user to specify a language for the UPPER function.
+-- This is not really needed with PostgreSQL, as upper() uses Unicode, independent of the language.
+-- On DB2, upper('Müller', 'en_US') also returns MÜLLER, just as with de_DE.
+CREATE FUNCTION db2.upper(text, text)
+RETURNS TEXT
+AS $$ SELECT upper($1); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.upper(text, text) IS 'uppercase with language as second parameter (ignored)';
+
+-- LOWER(text, text): DB2 allows the user to specify a language for the LOWER function.
+-- This is not really needed with PostgreSQL, as lower() uses Unicode, independent of the language.
+CREATE FUNCTION db2.lower(text, text)
+RETURNS TEXT
+AS $$ SELECT lower($1); $$
+LANGUAGE SQL IMMUTABLE STRICT;
+COMMENT ON FUNCTION db2.lower(text, text) IS 'lowercase with language as second parameter (ignored)';
+
 CREATE FUNCTION db2.strip(value text)
 RETURNS text
 AS $$ SELECT trim($1); $$

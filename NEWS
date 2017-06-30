@@ -3,6 +3,8 @@ Copyright (C) 2015-2017 credativ GmbH
 
 Version 0.0.12 - Development
 
+* Added upper() and lower() functions (Balazs Barany)
+
 Version 0.0.11 - 2017-02-20
 
 * Added timestamp_format() function (Balazs Barany)
