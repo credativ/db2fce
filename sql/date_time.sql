@@ -61,4 +61,4 @@ SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS.FF');
 SELECT timestamp_format('2017-04-16 23:59:59.12', 'YYYY-MM-DD HH24:MI:SS');
 SELECT timestamp_format('2017-04-16 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
 SELECT timestamp_format('2017-May-16 23:59:59', 'YYYY-Mon-DD HH24:MI:SS');
-SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS'); -- WRONG (DB2 gives an error)
+SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS');

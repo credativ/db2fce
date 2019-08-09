@@ -262,9 +262,6 @@ SELECT timestamp_format('2017-May-16 23:59:59', 'YYYY-Mon-DD HH24:MI:SS');
  Tue May 16 23:59:59 2017
 (1 row)
 
-SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS'); -- WRONG (DB2 gives an error)
-     timestamp_format     
---------------------------
- Wed Mar 01 13:00:00 2017
-(1 row)
-
+SELECT timestamp_format('2017-02-29 13:00:00', 'YYYY-MM-DD HH24:MI:SS');
+ERROR:  date/time field value out of range: "2017-02-29 13:00:00"
+CONTEXT:  SQL function "timestamp_format" statement 1
