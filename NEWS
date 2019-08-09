@@ -5,6 +5,7 @@ Version 0.0.13 - Development
 
 * Build system improvements
 * Ensure that all objects are created in the db2 schema
+* Update tests
 
 Version 0.0.12 - 2017-06-30
 
