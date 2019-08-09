@@ -3,6 +3,9 @@ Copyright (C) 2015-2017 credativ GmbH
 
 Version 0.0.13 - Development
 
+* Build system improvements
+* Ensure that all objects are created in the db2 schema
+
 Version 0.0.12 - 2017-06-30
 
 * Added upper() and lower() functions (Balazs Barany)
