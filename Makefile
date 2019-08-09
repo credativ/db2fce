@@ -1,5 +1,5 @@
 EXTENSION = db2fce
-EXT_VERSION = 0.0.13
+EXT_VERSION = 0.0.14
 DATA = db2fce--${EXT_VERSION}.sql	\
 	db2fce--0.0.4--0.0.5.sql	\
 	db2fce--0.0.5--0.0.6.sql	\
@@ -9,7 +9,8 @@ DATA = db2fce--${EXT_VERSION}.sql	\
 	db2fce--0.0.9--0.0.10.sql	\
 	db2fce--0.0.10--0.0.11.sql	\
 	db2fce--0.0.11--0.0.12.sql	\
-	db2fce--0.0.12--0.0.13.sql
+	db2fce--0.0.12--0.0.13.sql	\
+	db2fce--0.0.13--0.0.14.sql
 
 noinst_DATA = db2fce.sql
 
