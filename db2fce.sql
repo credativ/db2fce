@@ -698,28 +698,6 @@ CREATE OPERATOR db2.^= (
 COMMENT ON OPERATOR db2.^= (integer, smallint) IS 'not equal';
 
 CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.abstimene,
-    LEFTARG = abstime,
-    RIGHTARG = abstime,
-    COMMUTATOR = ^=,
-    NEGATOR = =,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (abstime, abstime) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.reltimene,
-    LEFTARG = reltime,
-    RIGHTARG = reltime,
-    COMMUTATOR = ^=,
-    NEGATOR = =,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (reltime, reltime) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.oidne,
     LEFTARG = oid,
     RIGHTARG = oid,
@@ -795,17 +773,6 @@ CREATE OPERATOR db2.^= (
     JOIN = neqjoinsel
 );
 COMMENT ON OPERATOR db2.^= (point, point) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.tintervalne,
-    LEFTARG = tinterval,
-    RIGHTARG = tinterval,
-    COMMUTATOR = ^=,
-    NEGATOR = =,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (tinterval, tinterval) IS 'not equal';
 
 CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.cash_ne,
