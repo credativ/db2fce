@@ -1,6 +1,8 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015-2021 credativ GmbH
 
+Version 0.0.15 - Development
+
 Version 0.0.14 - 2021-05-11
 
 * Removed deprecated date types from ^= operator
