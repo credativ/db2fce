@@ -1,7 +1,7 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015-2022 credativ GmbH
 
-Version 0.0.15 - Development
+Version 0.0.15 - 2022-07-12
 
 * Removed array-based concatenation operator aliases
 
