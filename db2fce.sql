@@ -1140,27 +1140,6 @@ COMMENT ON OPERATOR db2.^= (anyrange, anyrange) IS 'not equal';
 -- !! operator (alias for ||)
 
 CREATE OPERATOR db2.!! (
-    PROCEDURE = pg_catalog.array_append,
-    LEFTARG = anyarray,
-    RIGHTARG = anyelement
-);
-COMMENT ON OPERATOR db2.!! (anyarray, anyelement) IS 'append element onto end of array';
-
-CREATE OPERATOR db2.!! (
-    PROCEDURE = pg_catalog.array_prepend,
-    LEFTARG = anyelement,
-    RIGHTARG = anyarray
-);
-COMMENT ON OPERATOR db2.!! (anyelement, anyarray) IS 'prepend element onto front of array';
-
-CREATE OPERATOR db2.!! (
-    PROCEDURE = pg_catalog.array_cat,
-    LEFTARG = anyarray,
-    RIGHTARG = anyarray
-);
-COMMENT ON OPERATOR db2.!! (anyarray, anyarray) IS 'concatenate';
-
-CREATE OPERATOR db2.!! (
     PROCEDURE = pg_catalog.textcat,
     LEFTARG = text,
     RIGHTARG = text

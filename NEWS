@@ -3,6 +3,8 @@ Copyright (C) 2015-2022 credativ GmbH
 
 Version 0.0.15 - Development
 
+* Removed array-based concatenation operator aliases
+
 Version 0.0.14 - 2021-05-11
 
 * Removed deprecated date types from ^= operator
