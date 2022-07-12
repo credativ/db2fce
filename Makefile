@@ -25,7 +25,7 @@ PG_CONFIG ?= pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 
-db2fce--${EXT_VERSION}.sql:
+db2fce--${EXT_VERSION}.sql: db2fce.sql
 	sed s/@VERSION@/${EXT_VERSION}/ db2fce.sql > db2fce--${EXT_VERSION}.sql
 
 all: db2fce--${EXT_VERSION}.sql
