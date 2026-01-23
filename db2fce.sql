@@ -592,7 +592,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = integer,
     RIGHTARG = bigint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -603,7 +602,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = boolean,
     RIGHTARG = boolean,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -614,7 +612,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = tid,
     RIGHTARG = tid,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -625,7 +622,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bigint,
     RIGHTARG = bigint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -636,7 +632,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bigint,
     RIGHTARG = integer,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -647,7 +642,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = integer,
     RIGHTARG = integer,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -658,7 +652,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = smallint,
     RIGHTARG = smallint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -669,7 +662,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = text,
     RIGHTARG = text,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -680,7 +672,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = smallint,
     RIGHTARG = integer,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -691,7 +682,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = integer,
     RIGHTARG = smallint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -702,7 +692,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = oid,
     RIGHTARG = oid,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -713,7 +702,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = real,
     RIGHTARG = real,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -724,7 +712,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = "char",
     RIGHTARG = "char",
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -735,7 +722,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = name,
     RIGHTARG = name,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -746,7 +732,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = oidvector,
     RIGHTARG = oidvector,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -757,7 +742,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = double precision,
     RIGHTARG = double precision,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -779,7 +763,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = money,
     RIGHTARG = money,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -790,7 +773,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = character,
     RIGHTARG = character,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -801,7 +783,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = anyarray,
     RIGHTARG = anyarray,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -812,7 +793,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = date,
     RIGHTARG = date,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -823,7 +803,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = time without time zone,
     RIGHTARG = time without time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -834,7 +813,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = real,
     RIGHTARG = double precision,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -845,7 +823,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = double precision,
     RIGHTARG = real,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -856,7 +833,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = inet,
     RIGHTARG = inet,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -867,7 +843,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = macaddr,
     RIGHTARG = macaddr,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -878,7 +853,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp with time zone,
     RIGHTARG = timestamp with time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -889,7 +863,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = interval,
     RIGHTARG = interval,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -900,7 +873,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = circle,
     RIGHTARG = circle,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -911,7 +883,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = time with time zone,
     RIGHTARG = time with time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -922,7 +893,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = lseg,
     RIGHTARG = lseg,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -933,7 +903,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = numeric,
     RIGHTARG = numeric,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -944,7 +913,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bit,
     RIGHTARG = bit,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -955,7 +923,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bit varying,
     RIGHTARG = bit varying,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -966,7 +933,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = smallint,
     RIGHTARG = bigint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -977,7 +943,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bigint,
     RIGHTARG = smallint,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -988,7 +953,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = bytea,
     RIGHTARG = bytea,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -999,7 +963,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp without time zone,
     RIGHTARG = timestamp without time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1010,7 +973,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = date,
     RIGHTARG = timestamp without time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1021,7 +983,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = date,
     RIGHTARG = timestamp with time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1032,7 +993,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp without time zone,
     RIGHTARG = date,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1043,7 +1003,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp with time zone,
     RIGHTARG = date,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1054,7 +1013,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp without time zone,
     RIGHTARG = timestamp with time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1065,7 +1023,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = timestamp with time zone,
     RIGHTARG = timestamp without time zone,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1076,7 +1033,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = uuid,
     RIGHTARG = uuid,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1087,7 +1043,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = record,
     RIGHTARG = record,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1098,7 +1053,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = anyenum,
     RIGHTARG = anyenum,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1109,7 +1063,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = tsvector,
     RIGHTARG = tsvector,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1120,7 +1073,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = tsquery,
     RIGHTARG = tsquery,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
@@ -1131,7 +1083,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = anyrange,
     RIGHTARG = anyrange,
     COMMUTATOR = ^=,
-    NEGATOR = =,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
