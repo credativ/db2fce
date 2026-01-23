@@ -1,8 +1,3 @@
-/* contrib/db2fce--0.0.15.sql */
-
--- complain if script is sourced in psql, rather than via CREATE EXTENSION
-\echo Use "CREATE EXTENSION db2fce" to load this file. \quit
-
 -- ^= operator (alias for <> and !=)
 
 -- We need to drop the old versions of the operator with the NEGATOR. Duplicate negators aren't supported anymore in Postgres.
@@ -549,5 +544,3 @@ CREATE OPERATOR db2.^= (
     JOIN = neqjoinsel
 );
 COMMENT ON OPERATOR db2.^= (anyrange, anyrange) IS 'not equal';
-
-RESET search_path;
