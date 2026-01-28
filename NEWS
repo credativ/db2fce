@@ -1,14 +1,12 @@
 db2fce News - History of user-visible changes
-Copyright (C) 2015-2024 credativ GmbH
-
-Version 0.0.16 - Development
+Copyright (C) 2015-2026 credativ GmbH
 
 Version 0.0.16 - 2026-01-23
 
 * Removed NEGATOR from ^= operators for PG > 16 compatibility. (Balázs Bárány)
-
-This will lead to worse performance in queries using the ^= operator if the 
-optimizer negates the expression. 
+  .
+  This will lead to worse performance in queries using the ^= operator if the
+  optimizer negates the expression.
 
 Version 0.0.15 - 2022-07-12
 
@@ -26,15 +24,15 @@ Version 0.0.13 - 2019-08-09
 
 Version 0.0.12 - 2017-06-30
 
-* Added upper() and lower() functions (Balazs Barany)
+* Added upper() and lower() functions (Balázs Bárány)
 
 Version 0.0.11 - 2017-02-20
 
-* Added timestamp_format() function (Balazs Barany)
+* Added timestamp_format() function (Balázs Bárány)
 
 Version 0.0.10 - 2016-07-25
 
-* Added date() and time() functions (Balazs Barany)
+* Added date() and time() functions (Balázs Bárány)
 
 Version 0.0.9 - 2016-06-24
 
@@ -43,7 +41,7 @@ Version 0.0.9 - 2016-06-24
 
 Version 0.0.8 - 2016-05-09
 
-* Added strip() and digits() functions (Balazs Barany)
+* Added strip() and digits() functions (Balázs Bárány)
 
 Version 0.0.7 - 2016-05-09
 
