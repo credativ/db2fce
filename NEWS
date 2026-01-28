@@ -1,7 +1,7 @@
 db2fce News - History of user-visible changes
 Copyright (C) 2015-2026 credativ GmbH
 
-Version 0.0.16 - 2026-01-23
+Version 0.0.16 - 2026-01-28
 
 * Removed NEGATOR from ^= operators for PG > 16 compatibility. (Balázs Bárány)
   .
