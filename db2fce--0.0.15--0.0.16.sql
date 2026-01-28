@@ -1,8 +1,9 @@
 -- ^= operator (alias for <> and !=)
 
--- We need to drop the old versions of the operator with the NEGATOR. Duplicate negators aren't supported anymore in Postgres.
--- Recreating the operators without negator means that the optimizer can't generate NOT() expressions for this operator anymore, 
--- which can lead to suboptimal performance.
+-- We need to drop the old versions of the operator with the NEGATOR. Duplicate
+-- negators aren't supported anymore in Postgres. Recreating the operators
+-- without negator means that the optimizer can't generate NOT() expressions
+-- for this operator anymore, which can lead to suboptimal performance.
 
 DROP OPERATOR IF EXISTS db2.^= (anyarray, anyarray);
 DROP OPERATOR IF EXISTS db2.^= (anyenum, anyenum);
