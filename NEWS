@@ -3,6 +3,13 @@ Copyright (C) 2015-2024 credativ GmbH
 
 Version 0.0.16 - Development
 
+Version 0.0.16 - 2026-01-23
+
+* Removed NEGATOR from ^= operators for PG > 16 compatibility. (Balázs Bárány)
+
+This will lead to worse performance in queries using the ^= operator if the 
+optimizer negates the expression. 
+
 Version 0.0.15 - 2022-07-12
 
 * Removed array-based concatenation operator aliases
