@@ -752,7 +752,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = point,
     RIGHTARG = point,
     COMMUTATOR = ^=,
-    NEGATOR = ~=,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );
