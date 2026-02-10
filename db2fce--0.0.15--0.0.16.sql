@@ -11,6 +11,7 @@ DROP OPERATOR IF EXISTS db2.^= (bit, bit);
 DROP OPERATOR IF EXISTS db2.^= (bool, bool);
 DROP OPERATOR IF EXISTS db2.^= (bpchar, bpchar);
 DROP OPERATOR IF EXISTS db2.^= (bytea, bytea);
+DROP OPERATOR IF EXISTS db2.^= ("char", "char");
 DROP OPERATOR IF EXISTS db2.^= (char, char);
 DROP OPERATOR IF EXISTS db2.^= (circle, circle);
 DROP OPERATOR IF EXISTS db2.^= (date, date);
