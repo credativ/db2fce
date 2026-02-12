@@ -708,16 +708,6 @@ CREATE OPERATOR db2.^= (
 COMMENT ON OPERATOR db2.^= (real, real) IS 'not equal';
 
 CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.charne,
-    LEFTARG = char,
-    RIGHTARG = char,
-    COMMUTATOR = ^=,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= (char, char) IS 'not equal';
-
-CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.namene,
     LEFTARG = name,
     RIGHTARG = name,
