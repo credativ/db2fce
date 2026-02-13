@@ -15,8 +15,7 @@ GRANT SELECT, REFERENCES ON sysibm.sysdummy1 TO PUBLIC;
 
 CREATE SCHEMA db2;
 GRANT USAGE ON SCHEMA db2 TO PUBLIC;
-
-SET search_path TO db2;
+SET LOCAL search_path = db2;
 
 -- MICROSECOND()/SECOND()/MINUTE()/HOUR() functions
 
