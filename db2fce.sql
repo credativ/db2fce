@@ -15,8 +15,7 @@ GRANT SELECT, REFERENCES ON sysibm.sysdummy1 TO PUBLIC;
 
 CREATE SCHEMA db2;
 GRANT USAGE ON SCHEMA db2 TO PUBLIC;
-
-SET search_path TO db2;
+SET LOCAL search_path = db2;
 
 -- MICROSECOND()/SECOND()/MINUTE()/HOUR() functions
 
@@ -708,16 +707,6 @@ CREATE OPERATOR db2.^= (
 COMMENT ON OPERATOR db2.^= (real, real) IS 'not equal';
 
 CREATE OPERATOR db2.^= (
-    PROCEDURE = pg_catalog.charne,
-    LEFTARG = "char",
-    RIGHTARG = "char",
-    COMMUTATOR = ^=,
-    RESTRICT = neqsel,
-    JOIN = neqjoinsel
-);
-COMMENT ON OPERATOR db2.^= ("char", "char") IS 'not equal';
-
-CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.namene,
     LEFTARG = name,
     RIGHTARG = name,
@@ -752,7 +741,6 @@ CREATE OPERATOR db2.^= (
     LEFTARG = point,
     RIGHTARG = point,
     COMMUTATOR = ^=,
-    NEGATOR = ~=,
     RESTRICT = neqsel,
     JOIN = neqjoinsel
 );

@@ -1,4 +1,4 @@
--- ^= operator (alias for <> and !=)
+-- Upgrade script from 0.0.15 to 0.0.16
 
 -- We need to drop the old versions of the operator with the NEGATOR. Duplicate
 -- negators aren't supported anymore in Postgres. Recreating the operators
@@ -12,6 +12,7 @@ DROP OPERATOR IF EXISTS db2.^= (bit, bit);
 DROP OPERATOR IF EXISTS db2.^= (bool, bool);
 DROP OPERATOR IF EXISTS db2.^= (bpchar, bpchar);
 DROP OPERATOR IF EXISTS db2.^= (bytea, bytea);
+DROP OPERATOR IF EXISTS db2.^= ("char", "char");
 DROP OPERATOR IF EXISTS db2.^= (char, char);
 DROP OPERATOR IF EXISTS db2.^= (circle, circle);
 DROP OPERATOR IF EXISTS db2.^= (date, date);
@@ -56,6 +57,7 @@ DROP OPERATOR IF EXISTS db2.^= (tsvector, tsvector);
 DROP OPERATOR IF EXISTS db2.^= (uuid, uuid);
 DROP OPERATOR IF EXISTS db2.^= (varbit, varbit);
 
+-- ^= operator (alias for <> and !=)
 CREATE OPERATOR db2.^= (
     PROCEDURE = pg_catalog.int48ne,
     LEFTARG = integer,
@@ -545,3 +547,57 @@ CREATE OPERATOR db2.^= (
     JOIN = neqjoinsel
 );
 COMMENT ON OPERATOR db2.^= (anyrange, anyrange) IS 'not equal';
+
+-- Updates sometimes cause the db2 objects to be in public
+DROP OPERATOR IF EXISTS public.^= (anyarray, anyarray);
+DROP OPERATOR IF EXISTS public.^= (anyenum, anyenum);
+DROP OPERATOR IF EXISTS public.^= (anyrange, anyrange);
+DROP OPERATOR IF EXISTS public.^= (bit, bit);
+DROP OPERATOR IF EXISTS public.^= (bool, bool);
+DROP OPERATOR IF EXISTS public.^= (bpchar, bpchar);
+DROP OPERATOR IF EXISTS public.^= (bytea, bytea);
+DROP OPERATOR IF EXISTS public.^= ("char", "char");
+DROP OPERATOR IF EXISTS public.^= (char, char);
+DROP OPERATOR IF EXISTS public.^= (circle, circle);
+DROP OPERATOR IF EXISTS public.^= (date, date);
+DROP OPERATOR IF EXISTS public.^= (date, timestamp);
+DROP OPERATOR IF EXISTS public.^= (date, timestamptz);
+DROP OPERATOR IF EXISTS public.^= (float4, float4);
+DROP OPERATOR IF EXISTS public.^= (float4, float8);
+DROP OPERATOR IF EXISTS public.^= (float8, float4);
+DROP OPERATOR IF EXISTS public.^= (float8, float8);
+DROP OPERATOR IF EXISTS public.^= (inet, inet);
+DROP OPERATOR IF EXISTS public.^= (int2, int2);
+DROP OPERATOR IF EXISTS public.^= (int2, int4);
+DROP OPERATOR IF EXISTS public.^= (int2, int8);
+DROP OPERATOR IF EXISTS public.^= (int4, int2);
+DROP OPERATOR IF EXISTS public.^= (int4, int4);
+DROP OPERATOR IF EXISTS public.^= (int4, int8);
+DROP OPERATOR IF EXISTS public.^= (int8, int2);
+DROP OPERATOR IF EXISTS public.^= (int8, int4);
+DROP OPERATOR IF EXISTS public.^= (int8, int8);
+DROP OPERATOR IF EXISTS public.^= (interval, interval);
+DROP OPERATOR IF EXISTS public.^= (lseg, lseg);
+DROP OPERATOR IF EXISTS public.^= (macaddr, macaddr);
+DROP OPERATOR IF EXISTS public.^= (money, money);
+DROP OPERATOR IF EXISTS public.^= (name, name);
+DROP OPERATOR IF EXISTS public.^= (numeric, numeric);
+DROP OPERATOR IF EXISTS public.^= (oid, oid);
+DROP OPERATOR IF EXISTS public.^= (oidvector, oidvector);
+DROP OPERATOR IF EXISTS public.^= (point, point);
+DROP OPERATOR IF EXISTS public.^= (record, record);
+DROP OPERATOR IF EXISTS public.^= (text, text);
+DROP OPERATOR IF EXISTS public.^= (tid, tid);
+DROP OPERATOR IF EXISTS public.^= (time, time);
+DROP OPERATOR IF EXISTS public.^= (timestamp, date);
+DROP OPERATOR IF EXISTS public.^= (timestamp, timestamp);
+DROP OPERATOR IF EXISTS public.^= (timestamp, timestamptz);
+DROP OPERATOR IF EXISTS public.^= (timestamptz, date);
+DROP OPERATOR IF EXISTS public.^= (timestamptz, timestamp);
+DROP OPERATOR IF EXISTS public.^= (timestamptz, timestamptz);
+DROP OPERATOR IF EXISTS public.^= (timetz, timetz);
+DROP OPERATOR IF EXISTS public.^= (tsquery, tsquery);
+DROP OPERATOR IF EXISTS public.^= (tsvector, tsvector);
+DROP OPERATOR IF EXISTS public.^= (uuid, uuid);
+DROP OPERATOR IF EXISTS public.^= (varbit, varbit);
+
