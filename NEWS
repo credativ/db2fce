@@ -3,6 +3,13 @@ Copyright (C) 2015-2026 credativ GmbH
 
 Version 0.0.17 - Development
 
+* Removed remaining NEGATOR (Balázs Bárány)
+* Dropped oddly named "char" operator, re-created without quotes (Balázs Bárány)
+* Removed unnecessary implementation of ^= for the internal '"char"' type
+  (Balázs Bárány)
+* Add update script from v0.0.15 to v0.0.17 to make it possible to jump over
+  v0.0.16.
+
 Version 0.0.16 - 2026-01-28
 
 * Removed NEGATOR from ^= operators for PG > 16 compatibility. (Balázs Bárány)
